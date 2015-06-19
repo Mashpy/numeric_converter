@@ -37,7 +37,12 @@ def translate(int)
       return firststr
     elsif int.to_s.length == 1 && int/number > 0
       return firststr + "#{name}"      
-   
+    elsif int < 100 && int/number > 0
+      return firststr + "#{name}" if int%number == 0
+      return firststr + "#{name} " + translate(int%number)
+    elsif int/number > 0
+      return firststr + translate(int/number) + " #{name} " + translate(int%number)
+    end
   end
 end
 
