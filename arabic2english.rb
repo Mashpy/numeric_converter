@@ -31,7 +31,14 @@ def translate(int)
       2 => "two",
       1 => "one"
     }
-
+  firststr = "new"
+  translate_name.each do |number, name|
+    if int == 0
+      return firststr
+    elsif int.to_s.length == 1 && int/number > 0
+      return firststr + "#{name}"      
+   
+  end
 end
 
 getnumber = gets.chomp
